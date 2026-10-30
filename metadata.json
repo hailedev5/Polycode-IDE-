@@ -1,0 +1,6 @@
+{
+  "name": "PolyCode IDE",
+  "description": "Offline compiler and AI assistant supporting 100+ programming languages and web technologies with live execution, syntax analysis, and code intelligence.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
