@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 240" width="100%" height="240">
+  <defs>
+    <linearGradient id="aiBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#161B2E" />
+      <stop offset="100%" stop-color="#0E131F" />
+    </linearGradient>
+    <linearGradient id="violetCyan" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8B5CF6" />
+      <stop offset="100%" stop-color="#00D2FF" />
+    </linearGradient>
+    <style>
+      @keyframes pulseNode {
+        0%, 100% { transform: scale(1); opacity: 0.8; }
+        50% { transform: scale(1.25); opacity: 1; filter: drop-shadow(0 0 10px #00D2FF); }
+      }
+      @keyframes dashAnim {
+        from { stroke-dashoffset: 100; }
+        to { stroke-dashoffset: 0; }
+      }
+      @keyframes textGlow {
+        0%, 100% { opacity: 0.85; }
+        50% { opacity: 1; }
+      }
+      .node-pulse { animation: pulseNode 2.2s infinite ease-in-out; transform-origin: center; }
+      .synapse-line { stroke-dasharray: 6 4; animation: dashAnim 4s linear infinite; }
+      .text-glow { animation: textGlow 2s infinite ease-in-out; }
+      .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; }
+    </style>
+  </defs>
+
+  <!-- Container -->
+  <rect x="2" y="2" width="796" height="236" rx="14" fill="url(#aiBg)" stroke="#2E3852" stroke-width="1.5" />
+
+  <!-- Neural Network Visual on Left -->
+  <g transform="translate(60, 40)">
+    <!-- Synapse lines -->
+    <line x1="30" y1="30" x2="90" y2="70" stroke="#8B5CF6" stroke-width="2" class="synapse-line" opacity="0.6" />
+    <line x1="30" y1="120" x2="90" y2="70" stroke="#00D2FF" stroke-width="2" class="synapse-line" opacity="0.6" />
+    <line x1="90" y1="70" x2="160" y2="40" stroke="#8B5CF6" stroke-width="2" class="synapse-line" opacity="0.7" />
+    <line x1="90" y1="70" x2="160" y2="110" stroke="#00D2FF" stroke-width="2" class="synapse-line" opacity="0.7" />
+
+    <!-- Nodes -->
+    <circle cx="30" cy="30" r="10" fill="#8B5CF6" class="node-pulse" />
+    <circle cx="30" cy="120" r="10" fill="#00D2FF" class="node-pulse" />
+    <circle cx="90" cy="70" r="16" fill="url(#violetCyan)" class="node-pulse" />
+    <circle cx="160" cy="40" r="11" fill="#10B981" class="node-pulse" />
+    <circle cx="160" cy="110" r="11" fill="#F59E0B" class="node-pulse" />
+
+    <text x="90" y="150" fill="#00D2FF" font-size="11" font-weight="bold" text-anchor="middle" class="mono">100% ON-DEVICE</text>
+  </g>
+
+  <!-- Feature Information on Right -->
+  <g transform="translate(290, 40)">
+    <text x="0" y="24" fill="#FFFFFF" font-size="18" font-weight="bold" font-family="sans-serif">🧠 On-Device Neural Code Intelligence</text>
+    <text x="0" y="48" fill="#94A3B8" font-size="13" font-family="sans-serif">Instant semantic reasoning across 108 languages with zero network packets sent.</text>
+
+    <!-- Checklist / Capabilities -->
+    <g transform="translate(0, 70)">
+      <rect x="0" y="0" width="220" height="30" rx="6" fill="#1F293D" stroke="#2E3852" />
+      <text x="10" y="20" fill="#10B981" font-size="11" font-weight="bold" class="mono">✓ Explain Code &amp; Big-O</text>
+
+      <rect x="235" y="0" width="220" height="30" rx="6" fill="#1F293D" stroke="#2E3852" />
+      <text x="245" y="20" fill="#00D2FF" font-size="11" font-weight="bold" class="mono">✓ Bug &amp; Leak Detective</text>
+
+      <rect x="0" y="42" width="220" height="30" rx="6" fill="#1F293D" stroke="#2E3852" />
+      <text x="10" y="62" fill="#8B5CF6" font-size="11" font-weight="bold" class="mono">✓ Semantic Transpiler</text>
+
+      <rect x="235" y="42" width="220" height="30" rx="6" fill="#1F293D" stroke="#2E3852" />
+      <text x="245" y="62" fill="#F59E0B" font-size="11" font-weight="bold" class="mono">✓ Performance Optimizer</text>
+    </g>
+  </g>
+</svg>
